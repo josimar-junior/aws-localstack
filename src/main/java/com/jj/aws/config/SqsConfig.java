@@ -14,7 +14,7 @@ import java.net.URI;
 @Configuration
 public class SqsConfig {
 
-    @Value("${cloud.aws.endpoint.sqs}")
+    @Value("${cloud.aws.endpoint}")
     private String sqsEndpoint;
 
     @Value("${cloud.aws.credentials.access-key}")

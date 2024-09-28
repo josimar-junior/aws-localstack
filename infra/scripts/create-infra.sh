@@ -13,3 +13,15 @@ done
 echo "Creating SQS queue..."
 awslocal sqs create-queue --queue-name person-queue
 echo "SQS queue created."
+
+echo "Creating DynamoDB table"
+awslocal dynamodb create-table \
+    --table-name Person \
+    --attribute-definitions \
+        AttributeName=cpf,AttributeType=S \
+    --key-schema \
+        AttributeName=cpf,KeyType=HASH \
+    --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
+    --endpoint-url http://localhost:4566 \
+    --region us-east-1
+echo "DynamoDB table created"

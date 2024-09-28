@@ -11,5 +11,4 @@ cloud:
     credentials:
       access-key: josimar
       secret-key: josimar
-    endpoint:
-      sqs: http://localhost:4566
+    endpoint: http://localhost:4566
