@@ -1,6 +1,5 @@
 package com.jj.aws.config;
 
-import io.awspring.cloud.sqs.operations.SqsTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,13 +28,6 @@ public class SqsConfig {
                 .credentialsProvider(StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKey, secretKey)))
                 .endpointOverride(URI.create(sqsEndpoint))
                 .region(Region.US_EAST_1).build();
-    }
-
-    @Bean
-    public SqsTemplate sqsTemplate(SqsAsyncClient sqsAsyncClient) {
-        return SqsTemplate.builder()
-                .sqsAsyncClient(sqsAsyncClient)
-                .build();
     }
 
 }
