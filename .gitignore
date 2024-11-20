@@ -1,6 +1,6 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!reactive/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -14,7 +14,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+reactive/.idea
 *.iws
 *.iml
 *.ipr
@@ -33,6 +33,6 @@ build/
 .vscode/
 
 .DS_Store
-.mvn/*
+reactive/.mvn/*
 mvnw
 mvnw.cmd
