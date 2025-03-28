@@ -90,6 +90,20 @@ public class PersonService {
                         .tableName("Person")
                         .item(item)
                         .build()))
+                .doOnSubscribe(sub -> {
+                    System.out.println("SUB " + sub);
+                })
+                .doOnNext(res -> {
+                    var requestID = res.responseMetadata().requestId();
+                    var status = res.sdkHttpResponse().statusCode();
+                    System.out.printf("PutItem, status: %d, requestId: %s%n", status, requestID);
+                })
+                .doOnSuccess(res -> {
+                    System.out.println("SUCESSO");
+                })
+                .doOnError(res -> {
+                    System.out.println("ERROR");
+                })
                 .then(deleteMessage(message.receiptHandle()));
     }
 
